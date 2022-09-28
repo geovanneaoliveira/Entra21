@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <meta lang="pt-br">
+    <script type="text/javascript">
+        
+        var lanches = [];
+        var id_Seq = 1;
+
+        function onAdd(){
+            let nome = prompt("Informe o nome do lanche!");
+            let valor = Number(prompt(`Informe o valor ${nome}`));
+
+            let lanche = {
+                "nome": nome,
+                "valor": valor,
+                "id": id_Seq
+            };
+            lanches.push(lanche);
+            id_Seq++;
+            tableLoad();
+        }
+
+        function tableLoad(){
+            let tableBody = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+            console.log(tableBody);
+            tableBody.innerHTML = lanches.map((lanche) => {
+                return `
+                <tr>
+                    <td class = "h3t" id = "lanche-${lanche.id}-nome">${lanche.nome}</td>
+                    <td class = "h3t" id = "lanche-${lanche.id}-valor">${lanche.valor}</td>
+                    <td class = "edit-cell" id = "lanche-${lanche.id}-crud">
+                        <button class = "btn btn-warning" onClick = "onAlter(${lanche.id})">Alterar</button> 
+                        <button class = "btn btn-danger" onClick = "onExclude(${lanche.id})">Excluir</button>   
+                    </td>
+                    <td class = "edit-cell" style = "display: none;" id = "lanche-${lanche.id}-save">
+                        <button class = "btn btn-add" onClick = "onSave(${lanche.id})">Salvar</button> 
+                        <button class = "btn btn-danger" onClick = "onCancel(${lanche.id})">Cancelar</button>   
+                    </td>
+                </tr>
+                `;
+            }).join("");
+        }
+
+        function onCancel(id){
+            let lanche = lanches.find(lanche => lanche.id === id);
+            document.getElementById(`lanche-${lanche.id}-nome`).innerHTML = `${lanche.nome}`;
+            document.getElementById(`lanche-${lanche.id}-valor`).innerHTML = `${lanche.valor}`;
+            document.getElementById(`lanche-${lanche.id}-crud`).style = "";
+            document.getElementById(`lanche-${lanche.id}-save`).style = "display: none;";
+        }
+
+        function onSave(id){
+            let lanche = lanches.find(lanche => lanche.id === id);
+            lanche.nome = document.getElementById(`input-lanche-${lanche.id}-nome`).value;
+            document.getElementById(`lanche-${lanche.id}-nome`).innerHTML = `${lanche.nome}`;
+            lanche.valor = document.getElementById(`input-lanche-${lanche.id}-valor`).value;
+            document.getElementById(`lanche-${lanche.id}-valor`).innerHTML = `${lanche.valor}`;
+            document.getElementById(`lanche-${lanche.id}-crud`).style = "";
+            document.getElementById(`lanche-${lanche.id}-save`).style = "display: none;";
+        }
+
+        function onAlter(id){
+            let lanche = lanches.find(lanche => lanche.id === id);
+            document.getElementById(`lanche-${lanche.id}-nome`).innerHTML = `
+                <input type = "text" id = "input-lanche-${lanche.id}-nome" value = "${lanche.nome}"/>
+            `;
+            document.getElementById(`lanche-${lanche.id}-valor`).innerHTML = `
+                <input type = "number" id = "input-lanche-${lanche.id}-valor" value = "${lanche.valor}"/>
+            `;
+            document.getElementById(`lanche-${lanche.id}-crud`).style = "display: none;"
+            document.getElementById(`lanche-${lanche.id}-save`).style = "";
+        }
+
+        function onExclude(id){
+            let lanche = lanches.find(lanche => lanche.id === id);
+            let userConf = confirm(`Deseja realmente excluir o lanche ${lanche.nome}?`);
+            if(userConf){
+                lanches = lanches.filter(lanche => lanche.id !== id);
+                tableLoad();
+            }
+        }
+    </script>
+    <title>Tabelas</title>
+</head>
+<body>
+    <div id="tabelas">
+        <table class="contained" id="tabela">
+            <caption><h3 class="h3t">A milior tabela</h3></caption>
+            <thead>
+                <tr>
+                    <th id="id50" class="white-ch">Lanche</th>
+                    <th colspan="2" id="id40">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td id="id50">January</td>
+                    <td id="id40">$100</td>
+                    <td class="edit-cell"><a href="#">View</a></td>
+                </tr>
+                <tr>
+                    <td id="id50">February</td>
+                    <td id="id40">$80</td>
+                    <td class="edit-cell"><a href="#">View</a></td>
+                </tr> -->
+            </tbody>
+            <tfoot>
+                <tr class="sum">
+                    <td colspan="3"><button class="btn btn-add" onclick="onAdd()">Adicionar</button></td>
+                </tr>
+            </tfoot>
+        </table>    
+    </div>
+</body>
+</html>

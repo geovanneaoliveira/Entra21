@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <title>Studio Ghibli</title>
+    <script type="text/javascript">
+        function getDog(){
+            let req = new XMLHttpRequest();
+            req.open("GET","https://dog.ceo/api/breeds/image/random",false);
+            req.send(null);
+            document.getElementsByTagName("img")[0].src = JSON.parse(req.responseText).message;
+        }
+    </script>
+</head>
+<body>
+    <img src/>
+    <button class="btn btn-add" onclick="getDog()">CLICK HERE TO GET A RANDOMIC CUTE DOG</button>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <title>CATAAS</title>
+    <script type="text/javascript">
+        function loadImg(){
+            requestImg();
+        }
+        
+        function loadImgWithText(){
+            let texto = prompt("O gato diz...");
+            if(texto != null){
+                requestImg(texto);
+            }
+        }
+
+        function loadGIF(){
+            requestGIF();
+        }
+
+        function requestImg(text){
+            let url = text == null || text == "" ?
+            "https://cataas.com/cat?json=true" : 
+            `https://cataas.com/cat/says/${text}?json=true` ;
+            console.log(document.getElementById("gato").classList);
+            let req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.onload = () => {
+                document.getElementsByTagName("img")[0].src = "https://cataas.com" + JSON.parse(req.responseText).url;
+                document.getElementById("gato").classList = "catPos customCat";
+                document.getElementsByTagName("img")[0].onload = () => {
+                    Array.from(document.getElementsByTagName("button")).forEach(btn => {
+                        btn.disabled = false;
+                    });
+                }
+            }
+            Array.from(document.getElementsByTagName("button")).forEach(btn => {
+                btn.disabled = true
+            });
+            req.send(null);
+        }
+        function requestGIF(text){
+            let url = text == null || text == "" ?
+            "https://cataas.com/cat/gif" : 
+            `https://cataas.com/cat/says/${text}?json=true` ;
+            console.log(document.getElementById("gato").classList);
+            let req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.onload = () => {
+                document.getElementsByTagName("img")[0].src = "https://cataas.com" + JSON.parse(req.responseText).url;
+                document.getElementById("gato").classList = "catPos customCat";
+                document.getElementsByTagName("img")[0].onload = () => {
+                    Array.from(document.getElementsByTagName("button")).forEach(btn => {
+                        btn.disabled = false;
+                    });
+                }
+            }
+            Array.from(document.getElementsByTagName("button")).forEach(btn => {
+                btn.disabled = true
+            });
+            req.send(null);
+        }
+    </script>
+</head>
+<body>
+    <img src id="gato"/>
+    <button class="btn btn-add" onclick="loadImg()">Get CAT</button>
+    <button class="btn btn-add" onclick="loadImgWithText()">Get CAT with text</button>
+    <button class="btn btn-add" onclick="loadGIF()">Get CAT GIF</button>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <title>Studio Ghibli</title>
+    <script type="text/javascript">
+        function loadChatList(){
+                let req = new XMLHttpRequest();
+                req.open("GET", "https://goweather.herokuapp.com/weather/",false);
+                req.send(null);
+                console.log(
+                    JSON.parse(req.responseText)
+                );
+                // document.getElementById("charlist").innerHTML = JSON.parse(req.responseText).map(
+                //     char => `<li>${char.name}</li>`).join("");
+        }
+    </script>
+</head>
+<body onload="loadChatList()">
+    <ul id="charlist"></ul>
+</body>
+</html> -->

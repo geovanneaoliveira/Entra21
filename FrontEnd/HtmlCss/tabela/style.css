@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+.h3t{
+    color: white;
+}
+
+.btn {
+    border: 0;
+    background-color: transparent;
+    padding: 6px 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn.btn-add{
+    margin-top: 2px;
+    color: white;
+    background-color: green;
+}
+
+.btn.btn-add:hover{
+    background-color: rgb(0, 207, 0);
+}
+
+.btn.btn-danger{
+    color: white;
+    background-color: darkred;
+}
+
+.btn.btn-danger:hover{
+    background-color: rgb(209, 3, 3);
+}
+
+.btn.btn-warning{
+    color: white;
+    background-color: rgb(177, 115, 0);
+}
+.btn.btn-warning:hover{
+    background-color: rgb(255, 182, 46);
+}
+
+input[type="file"]{
+    text-align: center;
+    padding: 5px;
+    display: block;
+    width: 98%;
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.548);
+}
+
+#sub{
+    display: block;
+}
+
+.labelinput{
+    text-align: left;
+}
+
+.titlebox{
+    display: block;
+    width: 45%;
+    margin: 0px auto 15px auto;
+    text-align: center;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.h3form{
+    text-align: center;
+}
+
+div.forms{
+    display: block;
+    width: 55%;
+    margin: 5px auto 5px auto;
+    text-align: left;
+    padding: 12px;
+    background-color: lightblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.548);
+}
+
+.formfull{
+    display: block;
+    width: 70%;
+    padding: 12px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.548);
+}
+
+.titulos{
+    align-self: center;
+}
+
+.TitulosPG{
+    text-align: center;
+    margin: 20px;
+}
+
+ul.navylist{
+    list-style-type: none;
+    text-align: center;
+    padding-inline-start: 0px;
+}
+
+ul.navylist li{
+    display: inline;
+}
+
+a{
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: royalblue;
+    border-radius: 5px;
+}
+
+.headerH2{
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+
+body{
+    background-color: rgb(46, 84, 97);
+}
+
+table{
+    /*border: 1px solid black;*/
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: start;
+    background-color: rgb(80, 133, 151);
+    padding: 8px 4px;
+    border: 0;
+    color: white;
+}
+
+table.contained {
+    margin: 0 15%;
+    width: 70%;
+}
+
+#id50{
+    width: 50%;
+}
+
+#id40{
+    width: 40%;
+}
+
+.linkmenu a:hover{
+    background-color: rgb(17, 0, 110);
+}
+
+.edit-cell{
+    text-align: right;
+}
+
+.edit-cell a {
+    text-decoration: none;
+    background-color: rgb(55,100,200);
+    padding: 4px 8px;
+    margin: 2px 0px;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.edit-cell a:hover{
+    background-color: rgb(55,100,255);
+}
+
+tr {
+    border-bottom: 1px solid #b3b3b3;
+}
+
+tfoot tr.sum td {
+    text-align: right;
+}
+
+tfoot tr {
+    border-bottom: 0;
+}
+
+small{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 864px) {
+    ul.navylist{
+        margin: 0 48px;
+    }
+    ul.navylist li a {
+        margin-top: 5px;
+        display: block;
+    }
+}

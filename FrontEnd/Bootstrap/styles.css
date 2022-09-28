@@ -1,0 +1,19 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    background-color: rgb(248, 249, 250);
+}
+
+.bg-teal{
+    background-color: rgb(56, 201, 201)!important;
+}
+
+div.footer{
+    padding: 24px;
+    background-color: rgb(56, 201, 201)!important;
+}
+
+a.mylink{
+    font-size: 15px;
+    font-style: italic;
+}

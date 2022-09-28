@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.globo {
+    margin-top: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+.jogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;    
+}
+
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.226);
+}
+
+h4{
+    margin-top: 0;
+}
+
+h2{
+    margin-top: 20px;
+}
+
+body {
+    text-align: center;
+    margin: auto;
+    min-height: 100vh;
+    background-image: url("./media/World_map_blank_without_borders.svg");
+    background-color: rgb(208, 221, 236);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+* {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type=text]{
+    border: none;
+    background-color: rgb(188, 208, 235);
+    padding: 5px;
+    border-bottom: 2px solid black;
+    margin-bottom: 21px;
+    transition: 0.3s;
+    outline: none;
+}
+
+input[type=text]:hover{
+    background-color: rgb(140, 179, 230);
+    color: black;
+}
+
+input[type=text]:hover::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+::placeholder{
+    color: black;
+    opacity: 0.5;
+}
+
+.btnTry{
+    border: none;
+    background-color: rgb(188, 208, 235);
+    border-bottom: 2px solid black;
+    transition: 0.3s;
+    margin-bottom: 21px;
+}
+
+.btnTry:hover{
+    background-color: rgb(140, 179, 230);
+    color: white;
+}
+
+#aviso{
+    margin-bottom: 21px;
+    font-style: italic;
+}

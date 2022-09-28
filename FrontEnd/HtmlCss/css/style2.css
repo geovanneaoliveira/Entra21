@@ -1,0 +1,101 @@
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    padding: 4px 32px;
+    text-decoration: none;
+    text-align: justify;
+    color: gold;
+    background-color: royalblue;
+    border-radius: 5px;
+}
+
+header{
+    width: 100%;
+    height: max-content;
+}
+
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+body{
+    background-color: lightblue;
+}
+
+table{
+    /*border: 1px solid black;*/
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: start;
+    background-color: #b3b3b3;
+    padding: 8px 4px;
+}
+
+table.contained {
+    margin: 0 15%;
+    width: 70%;
+}
+
+#id50{
+    width: 50%;
+}
+
+#id40{
+    width: 40%;
+}
+
+.linkmenu a:hover{
+    background-color: rgb(17, 0, 110);
+}
+
+.edit-cell{
+    text-align: center;
+}
+
+.edit-cell a {
+    text-decoration: none;
+    background-color: rgb(55,100,200);
+    padding: 4px 8px;
+    margin: 2px 0px;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.edit-cell a:hover{
+    background-color: rgb(55,100,255);
+}
+
+tr {
+    border-bottom: 1px solid #b3b3b3;
+}
+
+tfoot tr.sum td {
+    text-align: right;
+}
+
+tfoot tr {
+    border-bottom: 0;
+}
+
+small{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+    html,body{
+        background-color: darkseagreen;
+    }
+    .linkmenu{
+        margin: 0, 50px;
+    }
+}
