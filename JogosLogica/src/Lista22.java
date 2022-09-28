@@ -1,7 +1,13 @@
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Scanner;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class Lista22 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //System.out.println(areaqua(10,10));
         //ex2();
         //ex3();
@@ -24,6 +30,7 @@ public class Lista22 {
         //ex20();
         //ex21();
         //ex22();
+        ex23();
     }
 
     public static int areaqua(int a,int b) {
@@ -299,5 +306,11 @@ public class Lista22 {
             System.out.println("Não efetuar compra!");
         else
             System.out.println("Efetuar compra!");
+    }
+    public static void ex23() throws InterruptedException {
+        while (true){
+            System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss ")));
+            TimeUnit.SECONDS.sleep(1);
+        }
     }
 }
