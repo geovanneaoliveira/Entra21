@@ -16,4 +16,3 @@ function logPerson(user) {
 }
 console.log("Users: ");
 users.forEach(logPerson);
-console.log("vasco");
