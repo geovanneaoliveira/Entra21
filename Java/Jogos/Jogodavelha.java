@@ -6,14 +6,14 @@ public class Jogodavelha {
         boolean winner = false;
         boolean valida = false;
         String[][] tabuleiro = {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}};
-        while (winner == false) {
+        while (!winner) {
             System.out.print("Escolha a posição da O: ");
             int pos = sc.nextInt();
             int[] p1 = posicao(pos);
             int pi = p1[0];
             int pj = p1[1];
             if (tabuleiro[pi][pj] == "O" || tabuleiro[pi][pj] == "X") {
-                while (valida == false) {
+                while (!valida) {
                     System.out.println("Posição inválida! Jogue novamente.");
                     System.out.print("Escolha a posição do O: ");
                     pos = sc.nextInt();
@@ -56,7 +56,7 @@ public class Jogodavelha {
             pi = p2[0];
             pj = p2[1];
             if (tabuleiro[pi][pj] == "O" || tabuleiro[pi][pj] == "X") {
-                while (valida == false) {
+                while (!valida) {
                     System.out.println("Posição inválida! Jogue novamente.");
                     System.out.print("Escolha a posição do X: ");
                     pos = sc.nextInt();
@@ -95,42 +95,42 @@ public class Jogodavelha {
         int pi = 0;
         int pj = 0;
         switch (pos) {
-            case 1:
+            case 1 -> {
                 pi = 0;
                 pj = 0;
-                break;
-            case 2:
+            }
+            case 2 -> {
                 pi = 0;
                 pj = 1;
-                break;
-            case 3:
+            }
+            case 3 -> {
                 pi = 0;
                 pj = 2;
-                break;
-            case 4:
+            }
+            case 4 -> {
                 pi = 1;
                 pj = 0;
-                break;
-            case 5:
+            }
+            case 5 -> {
                 pi = 1;
                 pj = 1;
-                break;
-            case 6:
+            }
+            case 6 -> {
                 pi = 1;
                 pj = 2;
-                break;
-            case 7:
+            }
+            case 7 -> {
                 pi = 2;
                 pj = 0;
-                break;
-            case 8:
+            }
+            case 8 -> {
                 pi = 2;
                 pj = 1;
-                break;
-            case 9:
+            }
+            case 9 -> {
                 pi = 2;
                 pj = 2;
-                break;
+            }
         }
         int[] posicoes = {pi,pj};
         return posicoes;

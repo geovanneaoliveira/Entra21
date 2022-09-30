@@ -1,4 +1,5 @@
-import classes.Voo;
+package Voo;
+import Voo.classes.Voo;
 
 import java.util.Scanner;
 

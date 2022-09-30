@@ -10,7 +10,7 @@ public class Main {
         Estante e = new Estante(5);
         boolean loop = true;
         while (loop) {
-            EMenu opcao = (EMenu) escolherOpcao(null);
+            EMenu opcao = (EMenu) escolherOpcao(null);//eraIMENU
             switch (opcao) {
                 case SAIR -> loop = false;
                 case ADICIONAR_ITEM -> adicionarItem(e);
@@ -23,8 +23,8 @@ public class Main {
         System.out.println("Programa finalizado!");
     }
 
-    public static IMenu escolherOpcao(Item item) {
-        IMenu escolha = null;
+    public static EMenu escolherOpcao(Item item) {
+        EMenu escolha = null;
         while (escolha == null) {
             if (item != null) {
                 while (escolha == null) {
@@ -32,7 +32,7 @@ public class Main {
                     for(EMenuItem i : EMenuItem.values()) {
                         System.out.printf("(%d) %s\n", i.getValorOpcao(), i.getDescricao());
                     }
-                    escolha = EMenuItem.getByValorOpcao(in.nextInt());
+                    //escolha = EMenuItem.getByValorOpcao(in.nextInt());
                     if (escolha == null) {
                         System.err.println("Selecione uma opção válida");
                     }
@@ -42,7 +42,7 @@ public class Main {
                 for (EMenu menu : EMenu.values()) {
                     System.out.printf("(%d) - %s\n", menu.getValorOpcao(), menu.getDescricao());
                 }
-                escolha = EMenu.getByValorOpcao(in.nextInt());
+                //escolha = EMenu.getByValorOpcao(in.nextInt());
             }
             in.nextLine();
             if (escolha == null) {
@@ -94,19 +94,19 @@ public class Main {
         if (i == null) {
             System.err.println("O título buscado não existe na estante!");
         } else {
-            EMenuItem escolha = (EMenuItem) escolherOpcao(i);
-            switch (escolha) {
-                case VOLTAR -> System.out.println("Retornando...");
-                case VER_AVALIACOES -> mostarAvaliacoes(i);
-                case AVALIAR_ITEM -> i.avaliar();
-                case MOSTRAR_DETALHES -> {
-                    System.out.println("Título: "+i.getTitulo());
-                    System.out.println("Gênero: "+i.getGenero());
-                    i.mostrarDetalhes();
-                    System.out.printf("Valor: R$%.2f\n", i.getValor());
-                }
-                default -> System.out.println("Não implementado!");
-            }
+            //EMenuItem escolha = (EMenuItem) escolherOpcao(i);
+//            switch (escolha) {
+//                case VOLTAR -> System.out.println("Retornando...");
+//                case VER_AVALIACOES -> mostarAvaliacoes(i);
+//                case AVALIAR_ITEM -> i.avaliar();
+//                case MOSTRAR_DETALHES -> {
+//                    System.out.println("Título: "+i.getTitulo());
+//                    System.out.println("Gênero: "+i.getGenero());
+//                    i.mostrarDetalhes();
+//                    System.out.printf("Valor: R$%.2f\n", i.getValor());
+//                }
+//                default -> System.out.println("Não implementado!");
+//            }
         }
     }
 
@@ -143,10 +143,10 @@ public class Main {
         if (e.quantidadeItens() == 0) {
             System.out.println("Estante vazia!");
         } else {
-            for (int i = 0; i < e.quantidadeItens(); i++) {
-                Item item = e.getItens().get(i);
-                System.out.println("[" + i + "] " + item.getTitulo() + " (" + item.getGenero() + ")");
-            }
+//            for (int i = 0; i < e.quantidadeItens(); i++) {
+//                Item item = e.getItens().get(i);
+//                System.out.println("[" + i + "] " + item.getTitulo() + " (" + item.getGenero() + ")");
+//            }
         }
     }
 }

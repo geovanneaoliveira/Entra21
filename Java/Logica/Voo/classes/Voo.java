@@ -1,4 +1,4 @@
-package classes;
+package Voo.classes;
 
 public class Voo {
     public String[][] codificacaoAssento;

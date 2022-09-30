@@ -1,3 +1,5 @@
+package Baralho;
+
 public class Carta {
     private Naipe naipe;
     private ValorCarta valor;
