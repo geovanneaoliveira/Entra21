@@ -1,0 +1,17 @@
+<form [formGroup]="heroForm" style="display: flex; flex-direction:column; width: 25%;" (submit)="onSubmit()">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" formControlName="name"/>
+    <label for="secretIdentity">Secret Identity: </label>
+    <input type="text" name="secretIdentity" id="secretIdentity" formControlName="secretIdentity">
+    <div>
+        <input type="checkbox" name="alive" id="alive" formControlName="alive">
+        <label for="alive">Alive?</label>
+    </div>
+    <label for="universe">Universe:</label>
+    <div>
+        <input type="radio" name="universe" id="universe_DC" formControlName="universe" value="DC" placeholder="DC"> DC
+        <input type="radio" name="universe" id="universe_MARVEL" formControlName="universe" value="marvel" placeholder="Marvel"> Marvel
+    </div>
+    <button type="submit" [disabled]="!heroForm.valid">Criar</button>
+    <button type="button" (click)="cancel()" style="margin-top: 5px;">Cancelar</button>
+</form>
